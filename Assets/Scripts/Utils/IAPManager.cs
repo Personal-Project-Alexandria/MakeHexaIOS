@@ -1,0 +1,391 @@
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Purchasing;
+
+// Deriving the Purchaser class from IStoreListener enables it to receive messages from Unity Purchasing.
+public class IAPManager : MonoSingleton<IAPManager>, IStoreListener
+{
+	private static IStoreController m_StoreController;          // The Unity Purchasing system.
+	private static IExtensionProvider m_StoreExtensionProvider; // The store-specific Purchasing subsystems.
+
+
+#if UNITY_ANDROID
+	private static string PRODUCT_1000_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_00";
+	private static string PRODUCT_3500_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_1";
+	private static string PRODUCT_7000_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_2";
+	private static string PRODUCT_10000_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_3";
+	private static string PRODUCT_15000_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_4";
+	private static string PRODUCT_20000_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_5";
+	private static string PRODUCT_30000_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_6";
+	private static string PRODUCT_40000_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_7";
+	private static string PRODUCT_50000_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_8";
+	private static string PRODUCT_70000_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_9";
+	private static string PRODUCT_150000_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_10";
+	private static string PRODUCT_NOADS = "com.bestgameworld.puzzlefree.colorhexamakeblock.noads";
+#elif UNITY_IOS
+	private static string PRODUCT_1000_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_0";
+	private static string PRODUCT_3500_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_1";
+	private static string PRODUCT_7000_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_2";
+	private static string PRODUCT_10000_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_3";
+	private static string PRODUCT_15000_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_4";
+	private static string PRODUCT_20000_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_5";
+	private static string PRODUCT_30000_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_6";
+	private static string PRODUCT_40000_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_7";
+	private static string PRODUCT_50000_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_8";
+	private static string PRODUCT_70000_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_9";
+	private static string PRODUCT_150000_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_10";
+	private static string PRODUCT_NOADS = "com.bestgameworld.puzzlefree.colorhexamakeblock.noads";
+#else
+	private static string PRODUCT_1000_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_0";
+	private static string PRODUCT_3500_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_1";
+	private static string PRODUCT_7000_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_2";
+	private static string PRODUCT_10000_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_3";
+	private static string PRODUCT_15000_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_4";
+	private static string PRODUCT_20000_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_5";
+	private static string PRODUCT_30000_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_6";
+	private static string PRODUCT_40000_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_7";
+	private static string PRODUCT_50000_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_8";
+	private static string PRODUCT_70000_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_9";
+	private static string PRODUCT_150000_DIAMOND = "com.bestgameworld.puzzlefree.colorhexamakeblock.diamond_10";
+	private static string PRODUCT_NOADS = "com.bestgameworld.puzzlefree.colorhexamakeblock.noads";
+#endif
+
+	void Start()
+	{
+		// If we haven't set up the Unity Purchasing reference
+		if (m_StoreController == null)
+		{
+			// Begin to configure our connection to Purchasing
+			InitializePurchasing();
+		}
+	}
+
+	public void InitializePurchasing()
+	{
+		// If we have already connected to Purchasing ...
+		if (IsInitialized())
+		{
+			// ... we are done here.
+			return;
+		}
+
+		// Create a builder, first passing in a suite of Unity provided stores.
+		var builder = ConfigurationBuilder.Instance(StandardPurchasingModule.Instance());
+
+
+		builder.AddProduct(PRODUCT_1000_DIAMOND, ProductType.Consumable);
+		builder.AddProduct(PRODUCT_3500_DIAMOND, ProductType.Consumable);
+		builder.AddProduct(PRODUCT_7000_DIAMOND, ProductType.Consumable);
+		builder.AddProduct(PRODUCT_10000_DIAMOND, ProductType.Consumable);
+		builder.AddProduct(PRODUCT_15000_DIAMOND, ProductType.Consumable);
+		builder.AddProduct(PRODUCT_20000_DIAMOND, ProductType.Consumable);
+		builder.AddProduct(PRODUCT_30000_DIAMOND, ProductType.Consumable);
+		builder.AddProduct(PRODUCT_40000_DIAMOND, ProductType.Consumable);
+		builder.AddProduct(PRODUCT_50000_DIAMOND, ProductType.Consumable);
+		builder.AddProduct(PRODUCT_70000_DIAMOND, ProductType.Consumable);
+		builder.AddProduct(PRODUCT_150000_DIAMOND, ProductType.Consumable);
+		builder.AddProduct(PRODUCT_NOADS, ProductType.NonConsumable);
+		
+		// Kick off the remainder of the set-up with an asynchrounous call, passing the configuration 
+		// and this class' instance. Expect a response either in OnInitialized or OnInitializeFailed.
+		UnityPurchasing.Initialize(this, builder);
+	}
+
+	private bool IsInitialized()
+	{
+		// Only say we are initialized if both the Purchasing references are set.
+		return m_StoreController != null && m_StoreExtensionProvider != null;
+	}
+
+	void BuyProductID(string productId)
+	{
+		// If Purchasing has been initialized ...
+		if (IsInitialized())
+		{
+			// ... look up the Product reference with the general product identifier and the Purchasing 
+			// system's products collection.
+			Product product = m_StoreController.products.WithID(productId);
+
+			// If the look up found a product for this device's store and that product is ready to be sold ... 
+			if (product != null && product.availableToPurchase)
+			{
+				Debug.Log(string.Format("Purchasing product asychronously: '{0}'", product.definition.id));
+				// ... buy the product. Expect a response either through ProcessPurchase or OnPurchaseFailed 
+				// asynchronously.
+				m_StoreController.InitiatePurchase(product);
+			}
+			// Otherwise ...
+			else
+			{
+				// ... report the product look-up failure situation  
+				Debug.Log("BuyProductID: FAIL. Not purchasing product, either is not found or is not available for purchase");
+			}
+		}
+		// Otherwise ...
+		else
+		{
+			// ... report the fact Purchasing has not succeeded initializing yet. Consider waiting longer or 
+			// retrying initiailization.
+			Debug.Log("BuyProductID FAIL. Not initialized.");
+		}
+	}
+
+	public void RestorePurchases()
+	{
+		// If Purchasing has not yet been set up ...
+		if (!IsInitialized())
+		{
+			NotifyDialog notify = GameManager.Instance.OnShowNotiFyDialog("Notify", NotifyType.RESTORE_PURCHASE, 1);
+			// ... report the situation and stop restoring. Consider either waiting longer, or retrying initialization.
+			Debug.Log("RestorePurchases FAIL. Not initialized.");
+			return;
+		}
+
+		// If we are running on an Apple device ... 
+		if (Application.platform == RuntimePlatform.IPhonePlayer ||
+			Application.platform == RuntimePlatform.OSXPlayer)
+		{
+			// ... begin restoring purchases
+			Debug.Log("RestorePurchases started ...");
+
+			// Fetch the Apple store-specific subsystem.
+			var apple = m_StoreExtensionProvider.GetExtension<IAppleExtensions>();
+			// Begin the asynchronous process of restoring purchases. Expect a confirmation response in 
+			// the Action<bool> below, and ProcessPurchase if there are previously purchased products to restore.
+			apple.RestoreTransactions((result) => {
+				// The first phase of restoration. If no more responses are received on ProcessPurchase then 
+				// no purchases are available to be restored.
+				Debug.Log("RestorePurchases continuing: " + result + ". If no further messages, no purchases available to restore.");
+			});
+			NotifyDialog notify = GameManager.Instance.OnShowNotiFyDialog("Notify", NotifyType.RESTORE_PURCHASE, 0);
+		}
+		// Otherwise ...
+		else
+		{
+			NotifyDialog notify = GameManager.Instance.OnShowNotiFyDialog("Notify", NotifyType.RESTORE_PURCHASE, 2);
+			// We are not running on an Apple device. No work is necessary to restore purchases.
+			Debug.Log("RestorePurchases FAIL. Not supported on this platform. Current = " + Application.platform);
+		}
+	}
+
+	/* ------------------------------------------ BUY HERE ------------------------------------------ */
+
+	public void Buy1000Diamonds()
+	{
+        //oogleAnalyticsV4.getInstance().LogEvent("IAP", "Buy Product 1000 Diamond", string.Empty, 0L);
+        SoundManager.Instance.PlaySfx(SFX.Button);
+        this.BuyProductID(PRODUCT_1000_DIAMOND);
+	}
+
+	public void Buy3500Diamonds()
+	{
+        //oogleAnalyticsV4.getInstance().LogEvent("IAP", "Buy Product 3500 Diamond", string.Empty, 0L);
+
+        SoundManager.Instance.PlaySfx(SFX.Button);
+        this.BuyProductID(PRODUCT_3500_DIAMOND);
+	}
+
+	public void Buy7000Diamonds()
+	{
+        //oogleAnalyticsV4.getInstance().LogEvent("IAP", "Buy Product 7000 Diamond", string.Empty, 0L);
+
+        SoundManager.Instance.PlaySfx(SFX.Button);
+        this.BuyProductID(PRODUCT_7000_DIAMOND);
+	}
+
+	public void Buy10000Diamonds()
+	{
+        //oogleAnalyticsV4.getInstance().LogEvent("IAP", "Buy Product 10000 Diamond", string.Empty, 0L);
+
+        SoundManager.Instance.PlaySfx(SFX.Button);
+        this.BuyProductID(PRODUCT_10000_DIAMOND);
+	}
+
+	public void Buy15000Diamonds()
+	{
+        //oogleAnalyticsV4.getInstance().LogEvent("IAP", "Buy Product 15000 Diamond", string.Empty, 0L);
+
+        SoundManager.Instance.PlaySfx(SFX.Button);
+        this.BuyProductID(PRODUCT_15000_DIAMOND);
+	}
+
+	public void Buy20000Diamonds()
+	{
+        //oogleAnalyticsV4.getInstance().LogEvent("IAP", "Buy Product 20000 Diamond", string.Empty, 0L);
+
+        SoundManager.Instance.PlaySfx(SFX.Button);
+        this.BuyProductID(PRODUCT_20000_DIAMOND);
+	}
+
+	public void Buy30000Diamonds()
+	{
+        //oogleAnalyticsV4.getInstance().LogEvent("IAP", "Buy Product 30000 Diamond", string.Empty, 0L);
+
+        SoundManager.Instance.PlaySfx(SFX.Button);
+        this.BuyProductID(PRODUCT_30000_DIAMOND);
+	}
+
+	public void Buy40000Diamonds()
+	{
+        //oogleAnalyticsV4.getInstance().LogEvent("IAP", "Buy Product 40000 Diamond", string.Empty, 0L);
+
+        SoundManager.Instance.PlaySfx(SFX.Button);
+        this.BuyProductID(PRODUCT_40000_DIAMOND);
+	}
+
+	public void Buy50000Diamonds()
+	{
+        //oogleAnalyticsV4.getInstance().LogEvent("IAP", "Buy Product 50000 Diamond", string.Empty, 0L);
+
+        SoundManager.Instance.PlaySfx(SFX.Button);
+        this.BuyProductID(PRODUCT_50000_DIAMOND);
+	}
+
+	public void Buy70000Diamonds()
+	{
+        //oogleAnalyticsV4.getInstance().LogEvent("IAP", "Buy Product 70000 Diamond", string.Empty, 0L);
+
+        SoundManager.Instance.PlaySfx(SFX.Button);
+        this.BuyProductID(PRODUCT_70000_DIAMOND);
+	}
+
+	public void Buy150000Diamonds()
+	{
+        //oogleAnalyticsV4.getInstance().LogEvent("IAP", "Buy Product 150000 Diamond", string.Empty, 0L);
+
+        SoundManager.Instance.PlaySfx(SFX.Button);
+        this.BuyProductID(PRODUCT_150000_DIAMOND);
+	}
+
+	public void BuyNoAds()
+	{
+        //oogleAnalyticsV4.getInstance().LogEvent("IAP", "Buy Product No Ads", string.Empty, 0L);
+
+        SoundManager.Instance.PlaySfx(SFX.Button);
+        this.BuyProductID(PRODUCT_NOADS);
+	}
+
+
+	//  
+	// --- IStoreListener
+	//
+
+	public void OnInitialized(IStoreController controller, IExtensionProvider extensions)
+	{
+		// Purchasing has succeeded initializing. Collect our Purchasing references.
+		Debug.Log("OnInitialized: PASS");
+
+		// Overall Purchasing system, configured with products for this application.
+		m_StoreController = controller;
+		// Store specific subsystem, for accessing device-specific store features.
+		m_StoreExtensionProvider = extensions;
+	}
+
+	public void OnInitializeFailed(InitializationFailureReason error)
+	{
+		// Purchasing set-up has not succeeded. Check error for reason. Consider sharing this reason with the user.
+		Debug.Log("OnInitializeFailed InitializationFailureReason:" + error);
+	}
+
+	public PurchaseProcessingResult ProcessPurchase(PurchaseEventArgs args)
+	{
+		if (String.Equals(args.purchasedProduct.definition.id, PRODUCT_1000_DIAMOND, StringComparison.Ordinal))
+		{
+            //oogleAnalyticsV4.getInstance().LogEvent("IAP", "Buy Product Success 1000 Diamond", string.Empty, 0L);
+
+            NotifyDialog notify = GameManager.Instance.OnShowNotiFyDialog("Notify", NotifyType.TRANSACTION_SUCCESS);
+			UserProfile.Instance.AddDiamond(1000);
+		}
+		else if (String.Equals(args.purchasedProduct.definition.id, PRODUCT_3500_DIAMOND, StringComparison.Ordinal))
+		{
+            //oogleAnalyticsV4.getInstance().LogEvent("IAP", "Buy Product Success 3500 Diamond", string.Empty, 0L);
+
+            NotifyDialog notify = GameManager.Instance.OnShowNotiFyDialog("Notify", NotifyType.TRANSACTION_SUCCESS);
+			UserProfile.Instance.AddDiamond(3500);
+		}
+		else if (String.Equals(args.purchasedProduct.definition.id, PRODUCT_7000_DIAMOND, StringComparison.Ordinal))
+		{
+            //oogleAnalyticsV4.getInstance().LogEvent("IAP", "Buy Product Success 7000 Diamond", string.Empty, 0L);
+
+            NotifyDialog notify = GameManager.Instance.OnShowNotiFyDialog("Notify", NotifyType.TRANSACTION_SUCCESS);
+			UserProfile.Instance.AddDiamond(7000);
+		}
+		if (String.Equals(args.purchasedProduct.definition.id, PRODUCT_10000_DIAMOND, StringComparison.Ordinal))
+		{
+            //oogleAnalyticsV4.getInstance().LogEvent("IAP", "Buy Product Success 10000 Diamond", string.Empty, 0L);
+
+            NotifyDialog notify = GameManager.Instance.OnShowNotiFyDialog("Notify", NotifyType.TRANSACTION_SUCCESS);
+			UserProfile.Instance.AddDiamond(10000);
+		}
+		else if (String.Equals(args.purchasedProduct.definition.id, PRODUCT_15000_DIAMOND, StringComparison.Ordinal))
+		{
+            //oogleAnalyticsV4.getInstance().LogEvent("IAP", "Buy Product Success 15000 Diamond", string.Empty, 0L);
+
+            NotifyDialog notify = GameManager.Instance.OnShowNotiFyDialog("Notify", NotifyType.TRANSACTION_SUCCESS);
+			UserProfile.Instance.AddDiamond(15000);
+		}
+		else if (String.Equals(args.purchasedProduct.definition.id, PRODUCT_20000_DIAMOND, StringComparison.Ordinal))
+		{
+            //oogleAnalyticsV4.getInstance().LogEvent("IAP", "Buy Product Success 20000 Diamond", string.Empty, 0L);
+
+            NotifyDialog notify = GameManager.Instance.OnShowNotiFyDialog("Notify", NotifyType.TRANSACTION_SUCCESS);
+			UserProfile.Instance.AddDiamond(20000);
+		}
+		if (String.Equals(args.purchasedProduct.definition.id, PRODUCT_30000_DIAMOND, StringComparison.Ordinal))
+		{
+            //oogleAnalyticsV4.getInstance().LogEvent("IAP", "Buy Product Success 30000 Diamond", string.Empty, 0L);
+
+            NotifyDialog notify = GameManager.Instance.OnShowNotiFyDialog("Notify", NotifyType.TRANSACTION_SUCCESS);
+			UserProfile.Instance.AddDiamond(30000);
+		}
+		else if (String.Equals(args.purchasedProduct.definition.id, PRODUCT_40000_DIAMOND, StringComparison.Ordinal))
+		{
+            //oogleAnalyticsV4.getInstance().LogEvent("IAP", "Buy Product Success 40000 Diamond", string.Empty, 0L);
+
+            NotifyDialog notify = GameManager.Instance.OnShowNotiFyDialog("Notify", NotifyType.TRANSACTION_SUCCESS);
+			UserProfile.Instance.AddDiamond(40000);
+		}
+		else if (String.Equals(args.purchasedProduct.definition.id, PRODUCT_50000_DIAMOND, StringComparison.Ordinal))
+		{
+            //oogleAnalyticsV4.getInstance().LogEvent("IAP", "Buy Product Success 50000 Diamond", string.Empty, 0L);
+
+            NotifyDialog notify = GameManager.Instance.OnShowNotiFyDialog("Notify", NotifyType.TRANSACTION_SUCCESS);
+			UserProfile.Instance.AddDiamond(50000);
+		}
+		else if (String.Equals(args.purchasedProduct.definition.id, PRODUCT_70000_DIAMOND, StringComparison.Ordinal))
+		{
+            //oogleAnalyticsV4.getInstance().LogEvent("IAP", "Buy Product Success 70000 Diamond", string.Empty, 0L);
+
+            NotifyDialog notify = GameManager.Instance.OnShowNotiFyDialog("Notify", NotifyType.TRANSACTION_SUCCESS);
+			UserProfile.Instance.AddDiamond(70000);
+		}
+		else if (String.Equals(args.purchasedProduct.definition.id, PRODUCT_150000_DIAMOND, StringComparison.Ordinal))
+		{
+            //oogleAnalyticsV4.getInstance().LogEvent("IAP", "Buy Product Success 150000 Diamond", string.Empty, 0L);
+
+            NotifyDialog notify = GameManager.Instance.OnShowNotiFyDialog("Notify", NotifyType.TRANSACTION_SUCCESS);
+			UserProfile.Instance.AddDiamond(150000);
+		}
+		else if (String.Equals(args.purchasedProduct.definition.id, PRODUCT_NOADS, StringComparison.Ordinal))
+		{
+            //oogleAnalyticsV4.getInstance().LogEvent("IAP", "Buy Product Success No Ads", string.Empty, 0L);
+
+            NotifyDialog notify = GameManager.Instance.OnShowNotiFyDialog("Notify", NotifyType.TRANSACTION_SUCCESS);
+			UserProfile.Instance.RemoveAds();
+		}
+		else
+		{
+			//NotifyDialog notify = GUIManager.Instance.OnShowNotiFyDialog("Notify", NotifyType.TRANSACTION_FAIL);
+			Debug.Log(string.Format("ProcessPurchase: FAIL. Unrecognized product: '{0}'", args.purchasedProduct.definition.id));
+		}
+        SoundManager.Instance.PlaySfx(SFX.Buy);
+        return PurchaseProcessingResult.Complete;
+	}
+
+	public void OnPurchaseFailed(Product product, PurchaseFailureReason failureReason)
+	{
+		NotifyDialog notify = GameManager.Instance.OnShowNotiFyDialog("Notify", NotifyType.TRANSACTION_FAIL);
+		Debug.Log(string.Format("OnPurchaseFailed: FAIL. Product: '{0}', PurchaseFailureReason: {1}", product.definition.storeSpecificId, failureReason));
+	}
+}

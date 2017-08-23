@@ -1,0 +1,621 @@
+main.png
+size: 1024, 2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+aim
+  rotate: false
+  xy: 993, 228
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+back
+  rotate: false
+  xy: 895, 364
+  size: 124, 124
+  orig: 124, 124
+  offset: 0, 0
+  index: -1
+balls/large/big
+  rotate: false
+  xy: 903, 278
+  size: 84, 84
+  orig: 84, 84
+  offset: 0, 0
+  index: -1
+balls/large/checkpoint
+  rotate: false
+  xy: 734, 594
+  size: 84, 84
+  orig: 84, 84
+  offset: 0, 0
+  index: -1
+balls/large/cross
+  rotate: false
+  xy: 608, 621
+  size: 84, 84
+  orig: 84, 84
+  offset: 0, 0
+  index: -1
+balls/large/default
+  rotate: false
+  xy: 694, 680
+  size: 84, 84
+  orig: 84, 84
+  offset: 0, 0
+  index: -1
+balls/large/devil
+  rotate: false
+  xy: 607, 707
+  size: 84, 84
+  orig: 84, 84
+  offset: 0, 0
+  index: -1
+balls/large/donut
+  rotate: false
+  xy: 693, 766
+  size: 84, 84
+  orig: 84, 84
+  offset: 0, 0
+  index: -1
+balls/large/heart
+  rotate: false
+  xy: 607, 793
+  size: 84, 84
+  orig: 84, 84
+  offset: 0, 0
+  index: -1
+balls/large/kawaii
+  rotate: false
+  xy: 234, 902
+  size: 84, 84
+  orig: 84, 84
+  offset: 0, 0
+  index: -1
+balls/large/laser
+  rotate: false
+  xy: 320, 902
+  size: 84, 84
+  orig: 84, 84
+  offset: 0, 0
+  index: -1
+balls/large/lucky
+  rotate: false
+  xy: 178, 988
+  size: 84, 84
+  orig: 84, 84
+  offset: 0, 0
+  index: -1
+balls/large/ninja
+  rotate: false
+  xy: 264, 988
+  size: 84, 84
+  orig: 84, 84
+  offset: 0, 0
+  index: -1
+balls/large/pokeball
+  rotate: false
+  xy: 779, 841
+  size: 84, 84
+  orig: 84, 84
+  offset: 0, 0
+  index: -1
+balls/large/skull
+  rotate: false
+  xy: 693, 852
+  size: 84, 84
+  orig: 84, 84
+  offset: 0, 0
+  index: -1
+balls/large/small
+  rotate: false
+  xy: 578, 879
+  size: 84, 84
+  orig: 84, 84
+  offset: 0, 0
+  index: -1
+balls/large/spiral
+  rotate: false
+  xy: 865, 841
+  size: 84, 84
+  orig: 84, 84
+  offset: 0, 0
+  index: -1
+balls/large/square
+  rotate: false
+  xy: 779, 927
+  size: 84, 84
+  orig: 84, 84
+  offset: 0, 0
+  index: -1
+balls/large/tongue
+  rotate: false
+  xy: 865, 927
+  size: 84, 84
+  orig: 84, 84
+  offset: 0, 0
+  index: -1
+balls/large/triangle
+  rotate: false
+  xy: 664, 938
+  size: 84, 84
+  orig: 84, 84
+  offset: 0, 0
+  index: -1
+balls/large/ultrafast
+  rotate: false
+  xy: 578, 965
+  size: 84, 84
+  orig: 84, 84
+  offset: 0, 0
+  index: -1
+balls/large/unstable
+  rotate: false
+  xy: 415, 1021
+  size: 84, 84
+  orig: 84, 84
+  offset: 0, 0
+  index: -1
+balls/medium/big
+  rotate: false
+  xy: 184, 588
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+balls/medium/checkpoint
+  rotate: false
+  xy: 184, 638
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+balls/medium/cross
+  rotate: false
+  xy: 184, 688
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+balls/medium/default
+  rotate: false
+  xy: 184, 738
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+balls/medium/devil
+  rotate: false
+  xy: 184, 788
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+balls/medium/donut
+  rotate: false
+  xy: 184, 838
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+balls/medium/heart
+  rotate: false
+  xy: 184, 888
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+balls/medium/kawaii
+  rotate: false
+  xy: 178, 938
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+balls/medium/laser
+  rotate: false
+  xy: 350, 1050
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+balls/medium/lucky
+  rotate: false
+  xy: 70, 1261
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+balls/medium/ninja
+  rotate: false
+  xy: 750, 1013
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+balls/medium/pokeball
+  rotate: false
+  xy: 664, 1024
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+balls/medium/skull
+  rotate: false
+  xy: 577, 1051
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+balls/medium/small
+  rotate: false
+  xy: 501, 1097
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+balls/medium/spiral
+  rotate: false
+  xy: 415, 1107
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+balls/medium/square
+  rotate: false
+  xy: 800, 1013
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+balls/medium/tongue
+  rotate: false
+  xy: 850, 1013
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+balls/medium/triangle
+  rotate: false
+  xy: 900, 1013
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+balls/medium/ultrafast
+  rotate: false
+  xy: 950, 1054
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+balls/medium/unstable
+  rotate: false
+  xy: 714, 1063
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+brick
+  rotate: false
+  xy: 746, 296
+  size: 147, 147
+  orig: 147, 147
+  offset: 0, 0
+  index: -1
+brickbitparticle
+  rotate: false
+  xy: 820, 594
+  size: 73, 63
+  orig: 73, 63
+  offset: 0, 0
+  index: -1
+brickbitparticleheart
+  rotate: false
+  xy: 184, 532
+  size: 57, 54
+  orig: 57, 54
+  offset: 0, 0
+  index: -1
+bricktriangle
+  rotate: false
+  xy: 746, 445
+  size: 147, 147
+  orig: 147, 147
+  offset: 0, 0
+  index: -1
+circleborder180
+  rotate: false
+  xy: 244, 356
+  size: 180, 180
+  orig: 180, 180
+  offset: 0, 0
+  index: -1
+clear
+  rotate: false
+  xy: 2, 2
+  size: 458, 286
+  orig: 458, 286
+  offset: 0, 0
+  index: -1
+continuead
+  rotate: false
+  xy: 903, 210
+  size: 88, 66
+  orig: 88, 66
+  offset: 0, 0
+  index: -1
+continueiap
+  rotate: false
+  xy: 2, 532
+  size: 180, 180
+  orig: 180, 180
+  offset: 0, 0
+  index: -1
+doubleball
+  rotate: false
+  xy: 501, 1021
+  size: 74, 74
+  orig: 74, 74
+  offset: 0, 0
+  index: -1
+extraball
+  rotate: false
+  xy: 263, 1074
+  size: 74, 74
+  orig: 74, 74
+  offset: 0, 0
+  index: -1
+fastforward
+  rotate: false
+  xy: 895, 490
+  size: 124, 124
+  orig: 124, 124
+  offset: 0, 0
+  index: -1
+groundbounce
+  rotate: false
+  xy: 339, 1100
+  size: 74, 74
+  orig: 74, 74
+  offset: 0, 0
+  index: -1
+handcursor
+  rotate: false
+  xy: 2, 896
+  size: 174, 287
+  orig: 174, 287
+  offset: 0, 0
+  index: -1
+hlaser
+  rotate: false
+  xy: 178, 1144
+  size: 74, 74
+  orig: 74, 74
+  offset: 0, 0
+  index: -1
+libgdx
+  rotate: false
+  xy: 462, 129
+  size: 290, 80
+  orig: 290, 80
+  offset: 0, 0
+  index: -1
+littlerobotsoundfactory
+  rotate: false
+  xy: 244, 290
+  size: 214, 64
+  orig: 214, 64
+  offset: 0, 0
+  index: -1
+pause
+  rotate: false
+  xy: 608, 495
+  size: 124, 124
+  orig: 124, 124
+  offset: 0, 0
+  index: -1
+pausehome
+  rotate: false
+  xy: 178, 1074
+  size: 83, 68
+  orig: 83, 68
+  offset: 0, 0
+  index: -1
+pauseresume
+  rotate: false
+  xy: 462, 211
+  size: 282, 282
+  orig: 282, 282
+  offset: 0, 0
+  index: -1
+pausesoundoff
+  rotate: false
+  xy: 426, 495
+  size: 180, 180
+  orig: 180, 180
+  offset: 0, 0
+  index: -1
+pausesoundon
+  rotate: false
+  xy: 243, 538
+  size: 180, 180
+  orig: 180, 180
+  offset: 0, 0
+  index: -1
+resultsballs
+  rotate: false
+  xy: 951, 919
+  size: 67, 67
+  orig: 67, 67
+  offset: 0, 0
+  index: -1
+resultshome
+  rotate: false
+  xy: 178, 1074
+  size: 83, 68
+  orig: 83, 68
+  offset: 0, 0
+  index: -1
+resultsleaderboards
+  rotate: false
+  xy: 2, 714
+  size: 180, 180
+  orig: 180, 180
+  offset: 0, 0
+  index: -1
+resultsplayagain
+  rotate: false
+  xy: 2, 290
+  size: 240, 240
+  orig: 240, 240
+  offset: 0, 0
+  index: -1
+resultsrate
+  rotate: false
+  xy: 820, 659
+  size: 180, 180
+  orig: 180, 180
+  offset: 0, 0
+  index: -1
+resultsremoveads
+  rotate: false
+  xy: 425, 677
+  size: 180, 180
+  orig: 180, 180
+  offset: 0, 0
+  index: -1
+resultsshare
+  rotate: false
+  xy: 234, 720
+  size: 180, 180
+  orig: 180, 180
+  offset: 0, 0
+  index: -1
+resultswatchad
+  rotate: false
+  xy: 903, 210
+  size: 88, 66
+  orig: 88, 66
+  offset: 0, 0
+  index: -1
+rifter
+  rotate: false
+  xy: 462, 2
+  size: 448, 125
+  orig: 448, 125
+  offset: 0, 0
+  index: -1
+robot/arm
+  rotate: false
+  xy: 993, 250
+  size: 19, 5
+  orig: 19, 5
+  offset: 0, 0
+  index: -1
+robot/blink
+  rotate: false
+  xy: 895, 616
+  size: 67, 29
+  orig: 67, 29
+  offset: 0, 0
+  index: -1
+robot/body
+  rotate: false
+  xy: 2, 1261
+  size: 66, 63
+  orig: 66, 63
+  offset: 0, 0
+  index: -1
+robot/dead
+  rotate: false
+  xy: 627, 1074
+  size: 46, 46
+  orig: 46, 46
+  offset: 0, 0
+  index: -1
+robot/glasses
+  rotate: false
+  xy: 912, 2
+  size: 107, 106
+  orig: 107, 106
+  offset: 0, 0
+  index: -1
+robot/hand
+  rotate: false
+  xy: 993, 210
+  size: 22, 16
+  orig: 22, 16
+  offset: 0, 0
+  index: -1
+robot/head
+  rotate: false
+  xy: 754, 129
+  size: 147, 165
+  orig: 147, 165
+  offset: 0, 0
+  index: -1
+robot/innereye
+  rotate: false
+  xy: 951, 988
+  size: 66, 64
+  orig: 66, 64
+  offset: 0, 0
+  index: -1
+robot/reflex
+  rotate: false
+  xy: 951, 841
+  size: 70, 76
+  orig: 70, 76
+  offset: 0, 0
+  index: -1
+select
+  rotate: false
+  xy: 416, 859
+  size: 160, 160
+  orig: 160, 160
+  offset: 0, 0
+  index: -1
+skull
+  rotate: false
+  xy: 254, 1150
+  size: 74, 74
+  orig: 74, 74
+  offset: 0, 0
+  index: -1
+spread
+  rotate: false
+  xy: 2, 1185
+  size: 74, 74
+  orig: 74, 74
+  offset: 0, 0
+  index: -1
+star
+  rotate: false
+  xy: 350, 988
+  size: 63, 60
+  orig: 63, 60
+  offset: 0, 0
+  index: -1
+touch
+  rotate: false
+  xy: 912, 110
+  size: 98, 98
+  orig: 98, 98
+  offset: 0, 0
+  index: -1
+vlaser
+  rotate: false
+  xy: 78, 1185
+  size: 74, 74
+  orig: 74, 74
+  offset: 0, 0
+  index: -1
+xlaser
+  rotate: false
+  xy: 154, 1220
+  size: 74, 74
+  orig: 74, 74
+  offset: 0, 0
+  index: -1
