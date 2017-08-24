@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using ChartboostSDK;
+//using ChartboostSDK;
 //using AudienceNetwork;
 using GoogleMobileAds.Api;
 using System;
@@ -229,33 +229,33 @@ public class AdManager : PluginSingleton<AdManager> {
 
 	//------------------------------ CHARTBOOST --------------------------------//
 
-	private void ShowInterstitialChartboost()
-	{
-		if (Chartboost.hasInterstitial(CBLocation.Default))
-		{
-			Chartboost.showInterstitial(CBLocation.Default);
-		}
-		else
-		{
-			Chartboost.cacheInterstitial(CBLocation.Default);
-		}
-	}
-	private void ShowRewardVideoChartboost()
-	{
-		if (Chartboost.hasRewardedVideo(CBLocation.Default))
-		{
-			Chartboost.showRewardedVideo(CBLocation.Default);
-		}
-		else
-		{
-			Chartboost.cacheRewardedVideo(CBLocation.Default);
-		}
-	}
-	private void InitChartboost()
-	{
-		Chartboost.cacheInterstitial(CBLocation.Default);
-		Chartboost.cacheRewardedVideo(CBLocation.Default);
-	}
+	//private void ShowInterstitialChartboost()
+	//{
+	//	if (Chartboost.hasInterstitial(CBLocation.Default))
+	//	{
+	//		Chartboost.showInterstitial(CBLocation.Default);
+	//	}
+	//	else
+	//	{
+	//		Chartboost.cacheInterstitial(CBLocation.Default);
+	//	}
+	//}
+	//private void ShowRewardVideoChartboost()
+	//{
+	//	if (Chartboost.hasRewardedVideo(CBLocation.Default))
+	//	{
+	//		Chartboost.showRewardedVideo(CBLocation.Default);
+	//	}
+	//	else
+	//	{
+	//		Chartboost.cacheRewardedVideo(CBLocation.Default);
+	//	}
+	//}
+	//private void InitChartboost()
+	//{
+	//	Chartboost.cacheInterstitial(CBLocation.Default);
+	//	Chartboost.cacheRewardedVideo(CBLocation.Default);
+	//}
 
 	//---------------------------- MAIN FUNCTION -------------------------------//
 
