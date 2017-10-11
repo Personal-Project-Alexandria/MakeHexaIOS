@@ -684,6 +684,7 @@ public class Hexagon : MonoSingleton<Hexagon>
     public Button btHammer;
     public void OnNewGame()
     {
+        AdManager.Instance.ShowInterstitial();
         this.ClearScore();
         this.InitLogicListColor();
         this.CheckTransferColor();

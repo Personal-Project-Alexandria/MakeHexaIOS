@@ -14,7 +14,8 @@ public class GameOverDialog : StartDialog {
     public Text txtCoins;
 	public override void OnShow(Transform transf, object data)
 	{
-		base.OnShow(transf, data);
+        AdManager.Instance.ShowInterstitial();
+        base.OnShow(transf, data);
 		StartCoroutine(Setup());
 		int rand = Random.Range(0, 5);
 		if (rand == 0)
