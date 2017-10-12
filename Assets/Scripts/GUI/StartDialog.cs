@@ -59,4 +59,9 @@ public class StartDialog : BaseDialog {
         //oogleAnalyticsV4.getInstance().LogEvent("Menu", "Sound Click", string.Empty, 0L);
         SoundManager.Instance.ChangeIcon(sound);
 	}
+
+    public void OnClickRate()
+    {
+        GameManager.Instance.OnShowNotiFyDialog("Notify", NotifyType.RATE);
+    }
 }
