@@ -17,6 +17,7 @@ public class PlayDialog : BaseDialog {
 	public override void OnShow(Transform transf, object data)
     {
         base.OnShow(transf, data);
+        AdManager.Instance.ShowInterstitial();
         StartCoroutine(OnStartGame());
         Hexagon.Instance.callbackScore.Add(UpdateScore);
         this.txtHightScore.text = "High Score: " + UserProfile.Instance.GetHighScore().ToString();
